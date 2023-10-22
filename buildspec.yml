@@ -6,10 +6,10 @@ phases:
       java: corretto17
   pre_build:
     commands:
-      - curl -s "https://get.sdkman.io" | bash
-      - source "$HOME/.sdkman/bin/sdkman-init.sh"
-      - sdk version
-      - sdk install kotlin
+      - apt-get update
+      - apt-get install -y wget
+      - wget -O kotlin-compiler.zip https://github.com/JetBrains/kotlin/releases/download/v1.8.22/kotlin-compiler-1.8.22.zip
+      - unzip kotlin-compiler.zip -d /opt
   build:
     commands:
       - mvn compile
