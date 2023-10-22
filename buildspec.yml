@@ -6,8 +6,7 @@ phases:
       java: corretto17
   pre_build:
     commands:
-      - apt-get update
-      - apt-get install -y wget
+      - yum install -y wget
       - wget -O kotlin-compiler.zip https://github.com/JetBrains/kotlin/releases/download/v1.8.22/kotlin-compiler-1.8.22.zip
       - unzip kotlin-compiler.zip -d /opt
   build:
