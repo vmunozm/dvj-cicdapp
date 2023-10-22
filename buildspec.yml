@@ -8,6 +8,7 @@ phases:
     commands:
       - curl -s "https://get.sdkman.io" | bash
       - source "$HOME/.sdkman/bin/sdkman-init.sh"
+      - sdk version
       - sdk install kotlin
   build:
     commands:
@@ -18,7 +19,7 @@ phases:
     commands:
       - mvn package
       - mv target/cicdapp-dvj-0.0.1-SNAPSHOT.jar root.jar
-      # - command
+
 reports:
   jacoco-report:
     files:
